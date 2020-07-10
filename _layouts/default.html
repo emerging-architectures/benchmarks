@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+
+    {% if site.google_analytics %}
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+      </script>
+    {% endif %}
+    <meta charset="UTF-8">
+
+{% seo %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="shortcut icon" href="https://www.nrl.navy.mil/sites/edit-www.nrl.navy.mil/themes/custom/sub_nrl/favicon.ico" type="image/vnd.microsoft.icon">
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+			<div class="project-details">
+				{% if site.show_logo %}
+          <div class="menu-bar">
+            <a href="{{ site.nrl.url }}" alt="NRL Homepage">
+              <img class="project-logo" alt="NRL logo" src="{{ site.nrl.logo.white | absolute_url }}">
+            </a>
+            <a class="menu-item" alt="NRL homepage" href="{{ site.nrl.url }}">NRL Home</a>
+            <a class="menu-item" alt="Laboratories for Computational Physics homepage" href="{{ site.nrl.lcp.url }}">LCP Home</a>
+          </div>
+				{% endif %}
+				<h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+				{% if site.show_description %}
+					<h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+				{% endif %}
+
+				<h2 class="project-authors">by {{ page.authors }}</h2>
+				<h2 class="project-affiliation">{{ page.affiliation | default: site.affiliation }}</h2>
+
+				{% if site.github.is_project_page and site.show_github %}
+					<a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+				{% endif %}
+				{% if site.show_downloads %}
+					<a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
+					<a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
+				{% endif %}
+			</div>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+
+      <footer class="site-footer">
+        {% if site.github.is_project_page %}
+          <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
+        {% endif %}
+        <span class="site-footer-distribution-statement">Distribution A: Approved for public release, distribution unlimited.</span>
+      </footer>
+    </main>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </body>
+</html>

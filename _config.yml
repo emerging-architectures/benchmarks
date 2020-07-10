@@ -1,0 +1,18 @@
+theme: jekyll-theme-cayman
+
+repository: NRL-Emerging-Architectures/amd_mi50_benchmarks
+
+show_logo: true
+show_description: false
+show_github: false
+show_downloads: false
+
+nrl:
+  url: https://www.nrl.navy.mil/
+  lcp:
+    url: https://www.nrl.navy.mil/lcp/
+  logo:
+    color: /assets/images/nrl/logo_color.png
+    white: /assets/images/nrl/logo_white.png
+
+markdown: kramdown

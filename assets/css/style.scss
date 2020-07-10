@@ -1,0 +1,165 @@
+---
+---
+
+$nrl-navy: #162956;
+$nrl-blue: #2E5590;
+$nrl-light-blue: #6DA9CF;
+$nrl-yellow: #FAB208;
+$nrl-gray: #4C4F59;
+
+$notice-red: crimson;
+$body-text-color: rgb(77, 79, 89);  // from brand site
+$body-link-color: #2199e8;          // from brand site
+$section-headings-color: $nrl-navy;
+$blockquote-text-color: $nrl-gray;
+
+@import "{{ site.theme }}";
+
+#skip-to-content {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+
+  &:focus {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    height: auto;
+    width: auto;
+    background: invert($body-link-color);
+    outline: thick solid invert($body-link-color);
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+}
+
+.main-content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+	font-weight: bold;
+	}
+}
+
+.notice {
+  font-weight: bold;
+  color: $notice-red;
+}
+
+.page-header {
+  background-color: $nrl-navy;
+  background-image:
+    linear-gradient(to right, rgba($nrl-navy, 0.5), rgba($nrl-navy, 1)),
+    url("{{ '/assets/images/nrl/fractal_pattern.png' | relative_url }}");
+  background-repeat: no-repeat;
+	background-size: cover;
+  border-bottom: 3px solid $nrl-yellow;
+
+	@include large {
+    padding: 3rem 6rem;
+  }
+
+  @include medium {
+    padding: 2rem 4rem;
+  }
+
+  @include small {
+    padding: 2rem 1rem;
+  }
+}
+
+.project-details {
+	max-width: 80rem;
+	margin: 0 auto;
+}
+
+.project-name {
+}
+
+.project-authors {
+  font-weight: normal;
+  opacity: 0.9;
+
+  @include large {
+    font-size: 1.5;
+  }
+
+  @include medium {
+    font-size: 1.25;
+  }
+
+  @include small {
+    font-size: 1.15rem;
+  }
+}
+
+.project-affiliation {
+  @extend .project-tagline;
+}
+
+.menu-bar {
+  margin: 0 auto;
+  text-align: right;
+  overflow: auto;
+
+  @include large {
+    margin-bottom: 3rem;
+  }
+  @include medium {
+    margin-bottom: 2rem;
+  }
+  @include small {
+    display: none;
+  }
+
+  .project-logo {
+    max-width: 112px;
+    display: inline-block;
+    float: left;
+  }
+
+  .menu-item {
+    line-height: 100%;
+    padding: 10px 10px;
+    text-shadow: 1px 1px 1px #000;
+    text-transform: uppercase;
+    color: white;
+    display: inline-block;
+
+    &:hover {
+      color: $nrl-navy;
+      background-color: white;
+      text-decoration: none;
+      text-shadow: none;
+    }
+  }
+}
+
+.flow-text {
+  font-size: 1.5em;
+  line-height: 1.75em;
+}
+
+.toc {
+  li {
+    font-size: 1.25rem;
+    line-height: 2em;
+  }
+}
+
+.site-footer-distribution-statement {
+  @extend .site-footer-credits;
+  font-weight: normal;
+}
+
+.site-footer-owner {
+  font-weight: bold;
+}
