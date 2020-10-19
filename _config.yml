@@ -1,10 +1,10 @@
 theme: jekyll-theme-cayman
 
-repository: NRL-Emerging-Architectures/amd_mi50_benchmarks
+repository: emerging-architectures/sciml_benchmarks
 
 show_logo: true
 show_description: false
-show_github: false
+show_github: true
 show_downloads: false
 
 nrl:

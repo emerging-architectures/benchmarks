@@ -39,7 +39,9 @@
 					<h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
 				{% endif %}
 
-				<h2 class="project-authors">by {{ page.authors }}</h2>
+        {% if page.authors %}
+          <h2 class="project-authors">by {{ page.authors }}</h2>
+        {% endif %}
 				<h2 class="project-affiliation">{{ page.affiliation | default: site.affiliation }}</h2>
 
 				{% if site.github.is_project_page and site.show_github %}
